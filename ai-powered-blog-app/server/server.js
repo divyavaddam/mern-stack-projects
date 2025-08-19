@@ -1,11 +1,14 @@
 import express from "express";
 import "dotenv/config";
+import http from "http";
 import cors from "cors";
 import connectDB from "./configs/db.js";
 import adminRouter from "./routes/adminRoutes.js";
 import blogRouter from "./routes/blogRoutes.js";
+import { HttpResponse } from "@google/genai";
 
 const app = express();
+const server = http.createServer(app);
 
 (async () => {
   try {
@@ -25,13 +28,12 @@ app.get("/", (req, res) => res.send("API is working"));
 app.use("/api/admin", adminRouter);
 app.use("/api/blog", blogRouter);
 
-
 // Local Development Mode
 if (process.env.NODE_ENV !== "production") {
   const PORT = process.env.PORT || 3000;
-  app.listen(PORT, () => {
+  server.listen(PORT, () => {
     console.log("Server running on port " + PORT);
   });
 }
 
-export default app;
+export default server;
