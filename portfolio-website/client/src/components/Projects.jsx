@@ -3,10 +3,10 @@ import { projects } from "../data/projects";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 
 const categories = [
-  { name: "All", icon: "📁" },
-  { name: "Fullstack", icon: "🧩" },
-  { name: "Frontend", icon: "🎨" },
-  { name: "Backend", icon: "🧠" },
+  { name: "All"},
+  { name: "Fullstack"},
+  { name: "Frontend"},
+  { name: "Backend"},
 ];
 
 export default function Projects() {

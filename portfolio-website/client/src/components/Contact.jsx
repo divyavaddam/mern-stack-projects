@@ -49,7 +49,7 @@ export default function Contact() {
                    text-black dark:text-white"
       >
         <h2 className="text-4xl font-bold text-center mb-6">
-          📬 Let's Connect
+          Let's Connect
         </h2>
 
         <p className="text-center text-black/70 dark:text-white/70 mb-8">
@@ -58,19 +58,19 @@ export default function Contact() {
 
         {/* Contact Email */}
         <div className="text-center space-y-2 mb-6 text-sm">
-          ✉️ Email:{" "}
+          Email:{" "}
           <a
             href="mailto:your.email@example.com"
             className="text-cyan-500 dark:text-cyan-400 underline"
           >
-            your.email@example.com
+            divyavaddam@gmail.com
           </a>
         </div>
 
         {/* Social Icons */}
         <div className="flex justify-center gap-6 mb-8 text-2xl">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/divyavaddam"
             title="GitHub"
             target="_blank"
             rel="noreferrer"
@@ -79,7 +79,7 @@ export default function Contact() {
             <FaGithub />
           </a>
           <a
-            href="https://linkedin.com/in/yourprofile"
+            href="https://linkedin.com/in/divya-vaddam/"
             title="LinkedIn"
             target="_blank"
             rel="noreferrer"

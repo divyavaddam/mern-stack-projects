@@ -14,7 +14,7 @@ export default function About() {
         <div className="flex flex-col items-center text-center">
           {/* Profile Image */}
           <motion.img
-            src="/profile.jpg"
+            src="/about-icon.png"
             alt="Developer Avatar"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}

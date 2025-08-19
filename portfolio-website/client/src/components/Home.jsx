@@ -1,20 +1,20 @@
-
-
-import bgImage from '../assets/herobg.jpg'
-import { motion } from 'framer-motion'
-import { Typewriter } from 'react-simple-typewriter'
-import { FiDownload } from 'react-icons/fi'
+import bgImage from "/herobg.jpg";
+import { motion } from "framer-motion";
+import { Typewriter } from "react-simple-typewriter";
+import { FiDownload } from "react-icons/fi";
 
 export default function Home() {
   const typewriterWords = [
-    'MERN Stack Developer',
-    'Full Stack Enthusiast',
-    'Problem Solver',
-    
-  ]
+    "MERN Stack Developer",
+    "Full Stack Enthusiast",
+    "Problem Solver",
+  ];
 
   return (
-    <section className="w-full h-screen flex items-center justify-center text-white relative" id="home">
+    <section
+      className="w-full h-screen flex items-center justify-center text-white relative"
+      id="home"
+    >
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-50"
@@ -24,7 +24,7 @@ export default function Home() {
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
         className="text-center max-w-xl px-6 py-8 relative z-10"
       >
         <h1 className="text-4xl md:text-5xl font-bold mb-4 font-[Poppins]">
@@ -32,8 +32,13 @@ export default function Home() {
         </h1>
 
         <p className="text-xl md:text-2xl mb-6 font-[Poppins] font-bold">
-          <span className="text-emerald-500">A</span>{' '}
-          <span className="bg-gradient-to-r from-lime-500 to-orange-500 text-transparent bg-clip-text">
+          <span className="text-emerald-500">A</span>{" "}
+          <span
+            className="text-transparent bg-clip-text"
+            style={{
+              backgroundImage: "linear-gradient(to right, #7873f5, #ff6ec4)", //lime green → coral
+            }}
+          >
             <Typewriter
               words={typewriterWords}
               loop={true}
@@ -66,5 +71,5 @@ export default function Home() {
         </div>
       </motion.div>
     </section>
-  )
+  );
 }

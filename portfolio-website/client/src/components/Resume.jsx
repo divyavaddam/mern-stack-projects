@@ -1,83 +1,99 @@
-import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination } from 'swiper/modules'
-import 'swiper/css'
-import 'swiper/css/pagination'
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
 const educationTimeline = [
   {
-    degree: 'Graduation - B.Tech in Computer Science and Engineering',
-    institution: 'Priyadarshini Institute of Science and Technology for Women',
-    logo: 'https://img.icons8.com/color/48/000000/graduation-cap.png',
-    year: 'Expected July 2023',
-    details: 'CGPA: 7.04 — Participated in multiple academic and project-based activities.',
+    degree: "Graduation - B.Tech in Computer Science and Engineering",
+    institution: "Priyadarshini Institute of Science and Technology for Women",
+    logo: "https://img.icons8.com/color/48/000000/graduation-cap.png",
+    year: "Expected July 2023",
+    details:
+      "CGPA: 7.04 — Participated in multiple academic and project-based activities.",
   },
   {
-    degree: 'Intermediate - MPC',
-    institution: 'Sri Chaitanya Junior College, Khammam',
-    logo: 'https://img.icons8.com/color/48/000000/school.png',
-    year: '2019',
-    details: 'Percentage: 93.7% under Telangana State Board.',
+    degree: "Intermediate - MPC",
+    institution: "Sri Chaitanya Junior College, Khammam",
+    logo: "https://img.icons8.com/color/48/000000/school.png",
+    year: "2019",
+    details: "Percentage: 93.7% under Telangana State Board.",
   },
   {
-    degree: 'Secondary School Certificate',
-    institution: 'Saint Agnes High School, Dornakal',
-    logo: 'https://img.icons8.com/color/48/000000/school-building.png',
-    year: '2017',
-    details: 'GPA: 8.8 — Completed secondary education with strong academic performance.',
+    degree: "Secondary School Certificate",
+    institution: "Saint Agnes High School, Dornakal",
+    logo: "https://img.icons8.com/color/48/000000/school-building.png",
+    year: "2017",
+    details:
+      "GPA: 8.8 — Completed secondary education with strong academic performance.",
   },
-]
+];
 
 const certificationCards = [
   {
-    title: 'Responsive Web Design',
-    provider: 'freeCodeCamp',
-    date: 'June 2024',
-    image: 'https://picsum.photos/id/1015/600/400',
-    link: 'https://www.freecodecamp.org/certification/example',
+    title: "Build Your Own Static Website",
+    provider: "Nxtwave CCBP",
+    date: "May 11, 2022",
+    image: "/static.png",
+    link: "/static-pdf.pdf",
   },
   {
-    title: 'Frontend Development',
-    provider: 'NxtWave CCBP',
-    date: 'In Progress',
-    image: 'https://picsum.photos/id/1025/600/400',
-    link: 'https://www.nxtwave.tech/certificate/example',
+    title: "Build Your Own Responsive Website",
+    provider: "NxtWave CCBP",
+    date: "October 14, 2022",
+    image: "/responsive.png",
+    link: "/responsive-pdf.pdf",
   },
   {
-    title: 'Python for Everybody',
-    provider: 'Coursera',
-    date: '2023',
-    image: 'https://picsum.photos/id/1035/600/400',
-    link: 'https://www.coursera.org/account/accomplishments/example',
+    title: "Programming Foundations With Python",
+    provider: "NxtWave CCBP",
+    date: "December 09, 2022",
+    image: "/python-certificate.png",
+    link: "python-pdf.pdf",
   },
   {
-    title: 'JavaScript Algorithms',
-    provider: 'freeCodeCamp',
-    date: '2023',
-    image: 'https://picsum.photos/id/1042/600/400',
-    link: 'https://www.freecodecamp.org/certification/example-js',
+    title: "Build Your Own Dynamic Web Application",
+    provider: "NxtWave CCBP",
+    date: "April 10, 2023",
+    image: "/dynamic.png",
+    link: "/dynamic-pdf.pdf",
   },
   {
-    title: 'React Basics',
-    provider: 'Meta',
-    date: '2024',
-    image: 'https://picsum.photos/id/1050/600/400',
-    link: 'https://www.meta.com/certification/react/example',
+    title: "Introduction To Databases",
+    provider: "NxtWave CCBP",
+    date: "April 29, 2023",
+    image: "/databases.png",
+    link: "/databases-pdf.pdf",
   },
-]
+  {
+    title: "Javascript Essentials",
+    provider: "NxtWave CCBP",
+    date: "February 22, 2025",
+    image: "/js-essentials.png",
+    link: "/js-essentials-pdf.pdf",
+  },
+  {
+    title: "Developer Foundations",
+    provider: "NxtWave CCBP",
+    date: "November 15, 2023",
+    image: "/developer-foundations.png",
+    link: "/developer-foundations-pdf.pdf",
+  },
+];
 
 export default function Resume() {
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
-    document.documentElement.classList.remove('dark', 'light')
-    document.documentElement.classList.add(theme)
-  }, [theme])
+    document.documentElement.classList.remove("dark", "light");
+    document.documentElement.classList.add(theme);
+  }, [theme]);
 
-  const groupedSlides = []
+  const groupedSlides = [];
   for (let i = 0; i < certificationCards.length; i += 3) {
-    groupedSlides.push(certificationCards.slice(i, i + 3))
+    groupedSlides.push(certificationCards.slice(i, i + 3));
   }
 
   return (
@@ -92,7 +108,9 @@ export default function Resume() {
         transition={{ duration: 0.6 }}
         className="max-w-4xl w-full mb-20"
       >
-        <h3 className="text-3xl font-bold mb-6 text-center">🎓 Education Timeline</h3>
+        <h3 className="text-3xl font-bold mb-6 text-center">
+          🎓 Education
+        </h3>
         <div className="relative border-l-2 border-cyan-500 pl-6">
           {educationTimeline.map((edu, index) => (
             <motion.div
@@ -112,9 +130,15 @@ export default function Resume() {
               </div>
               <div className="pl-1">
                 <h4 className="text-xl font-semibold">{edu.degree}</h4>
-                <p className="text-sm text-gray-600 dark:text-white/70">{edu.institution}</p>
-                <p className="text-xs text-gray-400 dark:text-white/50 mb-1">{edu.year}</p>
-                <p className="text-sm text-gray-700 dark:text-white/60">{edu.details}</p>
+                <p className="text-sm text-gray-600 dark:text-white/70">
+                  {edu.institution}
+                </p>
+                <p className="text-xs text-gray-400 dark:text-white/50 mb-1">
+                  {edu.year}
+                </p>
+                <p className="text-sm text-gray-700 dark:text-white/60">
+                  {edu.details}
+                </p>
               </div>
             </motion.div>
           ))}
@@ -156,13 +180,20 @@ export default function Resume() {
                   />
                   <div className="p-3">
                     <h4 className="text-base font-semibold">{cert.title}</h4>
-                    <p className="text-sm text-gray-600 dark:text-white/70">{cert.provider}</p>
-                    <p className="text-xs text-gray-500 dark:text-white/50 mb-2">{cert.date}</p>
+                    <p className="text-sm text-gray-600 dark:text-white/70">
+                      {cert.provider}
+                    </p>
+                    <p className="text-xs text-gray-500 dark:text-white/50 mb-2">
+                      {cert.date}
+                    </p>
                     <a
                       href={cert.link}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-sm text-cyan-600 dark:text-cyan-400 underline"
+                      className="text-sm font-medium text-cyan-600 dark:text-cyan-400 
+             relative after:content-[''] after:block after:w-0 after:h-[2px] 
+             after:bg-cyan-500 after:transition-all after:duration-300 
+             hover:after:w-full"
                     >
                       View Certificate →
                     </a>
@@ -174,5 +205,5 @@ export default function Resume() {
         ))}
       </Swiper>
     </section>
-  )
+  );
 }
